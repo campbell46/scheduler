@@ -4,7 +4,7 @@ import Button from 'components/Button';
 
 export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
-  const [interviewer, setInterviewer] = useState(props.interviewer.id || null);
+  const [interviewer, setInterviewer] = useState(props.interviewer || null);
   
   const reset = function() {
     setStudent("");
@@ -19,7 +19,7 @@ export default function Form(props) {
   return (
     <main className="appointment__card appointment__card--create">
   <section className="appointment__card-left">
-    <form autoComplete="off">
+    <form onSubmit={event => event.preventDefault()} autoComplete="off">
       <input
         className="appointment__create-input text--semi-bold"
         name="name"
