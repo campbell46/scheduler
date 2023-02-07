@@ -34,7 +34,7 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_SAVE, true));
   }
 
-  function destroy(event) {
+  function destroy() {
       transition(DELETING, true)
     props.cancelInterview(props.id)
     .then(() => {
@@ -43,7 +43,7 @@ export default function Appointment(props) {
     .catch(error => transition(ERROR_DELETE, true))
     }  
 
-  function edit(id, interview) {
+  function edit() {
     transition(EDIT)
   }
   
