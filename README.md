@@ -1,12 +1,9 @@
 # Interview Scheduler
 
-Interview Scheduler is a single-page application that allows users to book, edit and delete interviews. Each day displays available spots for convenience. Users can add an interview by inputting their name and selecting an interviewer.
+Using the latest tools and techniques, we build and test a React application that allows users to book and cancel interviews. We combine a concise API with a WebSocket server to build a realtime experience.
 
-## Features
-- User can switch between days
-- Days show available interviews
-- Users can book an interview by inputting their name and selecting an interviewer
-- Users can edit/delete their interviews
+Interview Scheduler is a single-page application (SPA) that allows users to book technical interviews between students and mentors. Appointments can be between the hours of 12 PM and 5 PM, Monday to Friday. Each appointment has one student and one interviewer. When creating a new appointment, the user can enter any student name while the interviewer is chosen from a predefined list. The user can save the appointment and view the entire schedule of appointments on any day of the week. Appointments can also be edited or deleted. The front end of this project is built with React and makes requests to an API to fetch and store appointment data from a database.
+
 
 ## Final Product
 
