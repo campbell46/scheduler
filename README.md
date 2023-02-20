@@ -11,7 +11,16 @@ Interview Scheduler is a single-page application that allows users to book, edit
 ## Final Product
 
 #### Switching Days
-!["Switching days dynamically displays interviews for selected day."](https://github.com/adbwu/scheduler/blob/master/docs/SwitchingDays.gif?raw=true)
+!["Switching days dynamically displays interviews for selected day."](https://github.com/campbell46/scheduler/blob/master/docs/SelectDay.gif?raw=true)
+
+#### Booking Interview
+!["Switching days dynamically displays interviews for selected day."](https://github.com/campbell46/scheduler/blob/master/docs/BookInterview.gif?raw=true)
+
+#### Editing Interview
+!["Switching days dynamically displays interviews for selected day."](https://github.com/campbell46/scheduler/blob/master/docs/EditInterview.gif?raw=true)
+
+#### Delete Interview
+!["Switching days dynamically displays interviews for selected day."](https://github.com/campbell46/scheduler/blob/master/docs/DeleteInterview.gif?raw=true)
 
 
 ## Setup
