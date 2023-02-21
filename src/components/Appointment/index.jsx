@@ -11,6 +11,7 @@ import useVisualMode from 'hooks/useVisualMode';
 
 export default function Appointment(props) { 
 
+  //Transition modes to keep track of history
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -22,6 +23,7 @@ export default function Appointment(props) {
   const ERROR_DELETE = "ERROR_DELETE";
   const { mode, transition, back } = useVisualMode(props.interview ? SHOW : EMPTY);
 
+  //create interview object with new inputs and bookInterview
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -34,6 +36,7 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_SAVE, true));
   }
 
+  //delete interview
   function destroy() {
       transition(DELETING, true)
     props.cancelInterview(props.id)

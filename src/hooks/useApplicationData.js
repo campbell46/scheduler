@@ -10,6 +10,7 @@ export default function useApplicationData() {
     interviewers: {}
   })
 
+  //Get data on page load
   useEffect(() => {
 
     Promise.all([
@@ -28,7 +29,9 @@ export default function useApplicationData() {
 
   const setDay = day => setState({ ...state, day });
   
+  //Update spots every time an interview is booked/deleted
   const updateSpots = (appointments, appointmentId) => {
+
     // Find the day with the appointment id
     const day = state.days.find(d => d.appointments.includes(appointmentId));
 
@@ -42,16 +45,19 @@ export default function useApplicationData() {
 
   function bookInterview(id, interview) {
   
+    //store new appointment
     const appointment = {
       ...state.appointments[id],
       interview: {...interview }
     };
   
+    //add it to all appointments
     const appointments = {
       ...state.appointments,
       [id]: appointment
     };
     
+    //set state with new appointments object if call is successful
     return axios.put(`/api/appointments/${id}`, {interview})
     .then(() =>  { 
       setState((prev) => {
@@ -62,17 +68,19 @@ export default function useApplicationData() {
 
   function cancelInterview(id) {
 
+    //set interview to null
     const appointment = {
       ...state.appointments[id],
       interview: null
     }
-  
+
+    //add it to all appointments
     const appointments = {
       ...state.appointments,
       [id]: appointment
     };
 
-
+    //set state with new appointments object if call is successful
     return axios.delete(`/api/appointments/${id}`)
     .then(() => {
       setState((prev) => {

@@ -81,9 +81,7 @@ export default {
     }
   }),
 
-  put: jest.fn((url, interview) => { 
-    // fixtures.appointments["1"] = interview;
-    // fixtures.days[0].spots = 0
+  put: jest.fn(url => { 
     
     return Promise.resolve({
       status: 204,
@@ -91,7 +89,7 @@ export default {
     })
   }),
 
-  delete: jest.fn((url) => {
+  delete: jest.fn(url => {
     return Promise.resolve({
       status: 204,
       statusText: "No Content"

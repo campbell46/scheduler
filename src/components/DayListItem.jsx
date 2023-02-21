@@ -8,6 +8,7 @@ export default function DayListItem(props) {
     "day-list__item--full" : props.spots === 0
   });
 
+  //format spots to spot if only 1 and no spots if 0
   const formatSpots = (spots) => {
     let spotNum = '';
     if (spots === 0) {
