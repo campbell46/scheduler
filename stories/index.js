@@ -50,6 +50,8 @@ storiesOf("DayListItem", module)
     <DayListItem name="Tuesday" setDay={action("setDay")} spots={5} /> // action() allows us to create a callback that appears in the actions panel when clicked
 ));
 
+//Mock Data
+
 const days = [
   {
     id: 1,
@@ -67,6 +69,8 @@ const days = [
     spots: 0,
   },
 ];
+
+// DayList Stories
 
 storiesOf("DayList", module)
   .addParameters({

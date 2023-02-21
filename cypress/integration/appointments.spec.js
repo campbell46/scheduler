@@ -1,12 +1,13 @@
-
 describe("Appointments", () => {
 
+  //Before each test: reset database, visit url, make sure content is loaded
   beforeEach(() => {
     cy.request("GET", "/api/debug/reset")
     cy.visit("/");
     cy.contains('Monday');
   })
 
+  //Book an interview and confirm the new booking is displayed
   it("should book an interview", () => {
     cy.get("[alt=Add]")
       .first()
@@ -22,6 +23,7 @@ describe("Appointments", () => {
     cy.contains(".appointment__card--show", "Sylvia Palmer")
   })
 
+  //Edit an interview and confirm the inputs have changed
   it("should edit an interview", () => {
     cy.get("[alt=Edit]")
       .first()
@@ -38,6 +40,7 @@ describe("Appointments", () => {
     cy.contains(".appointment__card--show", "Tori Malcolm")
   })
 
+  //Delete interview and confirm it is no longer displayed
   it("should cancel an interview", () => {
     cy.get("[alt=Delete]")
       .click({ force: true });
@@ -46,7 +49,7 @@ describe("Appointments", () => {
 
     cy.contains("Deleting").should('exist');
     cy.contains("Deleting").should('not.exist');
-    
+
     cy.contains(".appointment__card--show", "Archie Cohen")
     .should('not.exist');
   })
